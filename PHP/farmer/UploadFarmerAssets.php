@@ -1,3 +1,13 @@
+<?php
+include '../connection.php';
+
+if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
+   echo 'Logged';
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +38,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>My Website</title>
+    <title>Jaljeevika</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -44,56 +54,19 @@
     <link href="css/main.css" rel="stylesheet" media="all">
   </head>
   <body>
-	  <div class="bg-top navbar-light">
-    	<div class="container">
-    		<div class="row no-gutters d-flex align-items-center align-items-stretch">
-    			<div class="col-md-4 d-flex align-items-center py-4">
-    				<a class="navbar-brand" href="index.html">Jaljeevika</a>
-    			</div>
-	    		<div class="col-lg-8 d-block">
-		    		<div class="row d-flex">
-					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-					    	<div class="text">
-					    		<span>Email</span>
-						    	<span>jaljeevika@email.com</span>
-						    </div>
-					    </div>
-					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <div class="text">
-						    	<span>Call</span>
-						    	<span>Call Us:022-23333345</span>
-						    </div>
-					    </div>
-					    <div class="col-md topper d-flex align-items-center justify-content-end">
-					    	<p class="mb-0">
-					    		<a href="#" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
-					    			<span>Register</span>
-					    		</a>
-					    		<a href="#" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
-					    			<span>Login</span>
-					    		</a>
-					    	</p>
-					    </div>
-				    </div>
-			    </div>
-		    </div>
-		  </div>
-    </div>
-	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container d-flex align-items-center px-4">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-	      <form action="#" class="searchform order-lg-last">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="ftco-navbar" >
+      <div class="container d-flex align-items-center px-4">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <form action="#" class="searchform order-lg-last">
           <div class="form-group d-flex">
             <input type="text" class="form-control pl-3" placeholder="Search">
             <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
           </div>
         </form>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav mr-auto"><li class="nav-item"><a href="index.php" class="nav-link pl-0">Home</a></li>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav mr-auto"><li class="nav-item"><a href="index.php" class="nav-link pl-0">Home</a></li>
         <li class="nav-item "><a href="videoFarmerList.php" class="nav-link pl-0">Videos</a></li>
         <li class="nav-item active"><a href="UploadFarmerAssets.php" class="nav-link pl-0">Sell</a></li>
         <li class="nav-item "><a href="checkVendorAssets.php" class="nav-link pl-0">Buy</a></li>
@@ -101,10 +74,10 @@
             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
           </ul>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+        </div>
+      </div>
+    </nav>
+    
     <!-- END nav -->
        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
@@ -135,7 +108,7 @@
                             <div class="name">Price per Asset</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="number" name="cpass">
+                                    <input class="input--style-5" type="number" name="price">
                                 </div>
                             </div>
                         </div>
@@ -149,29 +122,29 @@
         </div>
     </div>
 
-		
-		
+    
+    
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">jaljeevika@gmail.com</span></a></li>
-	              </ul>
-	            </div>
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">jaljeevika@gmail.com</span></a></li>
+                </ul>
+              </div>
             </div>
           </div>
           
              
          
             <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
-            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+              <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>

@@ -3,11 +3,11 @@
 
  $dbhost = "localhost";
  $dbuser = "root";
- $dbpass = "1234";
- $db = "scfg";
+ $dbpass = "";
+ $db = "fcfg";
  
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- echo "done";  
+ 
 
   //require('../PHP/connection.php');
 
@@ -18,9 +18,9 @@
  
   if( !$selectRes ){
     echo 'Retrieval of data from Database Failed - #'.mysqli_errno().': '.mysqli_error();
-    echo "done";
+    
   }else{
-    echo "else";
+    
     ?>
 <table border="2">
   <thead>

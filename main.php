@@ -57,8 +57,36 @@ if (isset($_POST['login'])) {
 }
 
 
-if (isset($_POST['Register'])) {
-    echo 1;
+if(isset($_POST['submit'])){
+    
+    
+
+    
+    $name=mysqli_real_escape_string($conn,$_POST['name']);
+    $password=mysqli_real_escape_string($conn,$_POST['password']);
+    $state=mysqli_real_escape_string($conn,$_POST['state']);
+    $district=mysqli_real_escape_string($conn,$_POST['district']);
+    $pcode=mysqli_real_escape_string($conn,$_POST['pcode']);
+    $contact=mysqli_real_escape_string($conn,$_POST['contact']);
+
+
+                                                 $query ="INSERT INTO posts(id,name,password,state,district,pcode,contact)VALUES('','$name','$email','$password','$state','$district','$pcode','$contact' )";
+$query = "INSERT INTO `users`(`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `state`, `dist`, `address`, `contact`, `auth`, `roleid`) VALUES ('',$name,$email,$password,'','','',$state,$district,$address,$contact,0,$roleid)";
+
+if(mysqli_query($conn,$query)){
+    header('Location: '.'index.php'.'');
+}else{
+    echo 'ERROR:'.mysqli_error($conn);
 }
+}
+
+
+
+
+
+
+
+
+
 
 ?>

@@ -71,7 +71,7 @@
                             <div class="name">District</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
+                                    <input class="input--style-5" type="text" name="district">
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                             <div class="name">State</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
+                                    <input class="input--style-5" type="text" name="state">
                                 </div>
                             </div>
                         </div>

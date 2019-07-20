@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2019 at 05:50 PM
+-- Generation Time: Jul 20, 2019 at 10:33 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -51,6 +51,15 @@ CREATE TABLE `expert` (
   `lang` varchar(600) DEFAULT NULL,
   `keyword` varchar(600) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `expert`
+--
+
+INSERT INTO `expert` (`eid`, `id`, `link`, `title`, `des`, `lang`, `keyword`) VALUES
+(14, 1, 'https://www.youtube.com/watch?v=FtKVHYqLSdc', 'ashkasd', 'akashdjakds', 'english', 'asdasdasdaasd'),
+(15, 1, 'https://www.youtube.com/watch?v=qFsRKrz_nhI', 'sdf', 'sdf', 'India', 'dsf'),
+(16, 1, 'https://www.youtube.com/watch?v=qFsRKrz_nhI', 'ashkasd', 'asdas', 'english', 'asdasdasdaasd');
 
 -- --------------------------------------------------------
 
@@ -276,6 +285,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `state`, `dist`, `address`, `contact`, `auth`, `roleid`) VALUES
+(1, 'Rajpreet Singh', 'r@gmail.com', '123', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Maharashtra', '123', 'Building Number 4, Flat Number 28, B-wing, Vaishali Park, Vaishali Nagar, Mulund West,, Balrajeshwar Road', '1223', 0, 1),
+(2, 'Rajpreet Singh', 'rajpreet24033@gmail.com', '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Maharashtra', '123', 'Building Number 4, Flat Number 28, B-wing, Vaishali Park, Vaishali Nagar, Mulund West,, Balrajeshwar Road', '1223', 0, 4),
+(3, 'Rajpreet Singh', 'rajpreet24033@gmail.com', '123', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Maharashtra', '123', 'Building Number 4, Flat Number 28, B-wing, Vaishali Park, Vaishali Nagar, Mulund West,, Balrajeshwar Road', '1223', 0, 4),
+(4, 'Rajpreet Singh', 'rajpreet24033@gmail.com', '123', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Maharashtra', '123', 'Building Number 4, Flat Number 28, B-wing, Vaishali Park, Vaishali Nagar, Mulund West,, Balrajeshwar Road', '1223', 0, 4),
+(5, 'Rajpreet Singh', 'rajpreet24033@gmail.com', '123', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Maharashtra', '123', 'Building Number 4, Flat Number 28, B-wing, Vaishali Park, Vaishali Nagar, Mulund West,, Balrajeshwar Road', '1223', 0, 4),
+(6, 'Rajpreet Singh', 'rajpreet24033@gmail.com', '123', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Maharashtra', '123', 'Building Number 4, Flat Number 28, B-wing, Vaishali Park, Vaishali Nagar, Mulund West,, Balrajeshwar Road', '1223', 0, 4);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -379,7 +400,7 @@ ALTER TABLE `assets`
 -- AUTO_INCREMENT for table `expert`
 --
 ALTER TABLE `expert`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -415,7 +436,7 @@ ALTER TABLE `pondsfeedback`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

@@ -1,3 +1,20 @@
+    
+<?php 
+session_start();
+if(!isset($_SESSION["role"]) && (!isset($_SESSION["id"])))
+
+	{
+		header("location: index.php");
+	}
+else{
+    header("location: ../login.php");
+}?>
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 

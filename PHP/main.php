@@ -36,7 +36,6 @@ if (isset($_POST['login'])) {
                 session_start();
                 $_SESSION["email"] = $email;
                 if($role == 1){
-
                     header('Location: farmer/index.php'); 
                 }
                 if($role == 2){
@@ -51,12 +50,6 @@ if (isset($_POST['login'])) {
                 if($role == 5){
                     header('Location: po/index.php'); 
                 }
-
-
-
-
-                
-
                 
 	}
 }

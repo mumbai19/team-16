@@ -114,6 +114,11 @@ $link = $_GET['link'];
 
                 <hr>
 
+                <?php $link = str_replace("'", "", $_GET['link']);
+                echo $link;
+                echo "hello";
+                ?>
+
                 <iframe width="100%" height="30%" src="<?php echo $link; ?>" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>

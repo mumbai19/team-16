@@ -11,28 +11,50 @@ use GuzzleHttp\Subscriber\Oauth\Oauth1;
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
 if (isset($_POST['Login'])) {
+    $updatetrips = "UPDATE trips set stat=1 WHERE date_time < now()";
+    $updatetripsresult = mysqli_query($conn,$updatetrips);
+    $username =  $_POST['username'];    
+    $password =  $_POST['password'];    
+    $password = sha1($password);
+    
+    $result = mysqli_query($conn,"SELECT * FROM users WHERE username='" . $username . "' and password = '". $password."'");
+    while($row1 = mysqli_fetch_array($result)){
+        $email =  $row1['email_id'];
+    }
 
-    $client = new Client;
-                $response = $client->request('POST', 'http://fcfg.com/oauth/token', [
-                    'form_params' => [
-                        'grant_type' => 'password',
-                        'client_id' => '2',
-                        'client_secret' => 'nOAj3cdcKguorFZdlrisBzaSD0MxfHMV7VgKAqJJ',
-                        'username' => "r@123.com",
-                        'password' => "123",
-                    ],
-                    'headers' =>[
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/x-www-form-urlencoded',
-            ]
+	$count  = mysqli_num_rows($result);
+	if($count==0) {
+        $message = "Invalid Username or Password!";
+        header('Location: login.php'); 
+        } 
+        else 
+        {
+                $role =  $row1['roleid'];
+                session_start();
+                $_SESSION["email"] = $email;
+                if($role === 1){
+                    header('Location: farmer/index.php'); 
+                }
+                if($role === 2){
+                    header('Location: admin/index.php'); 
+                }
+                if($role === 3){
+                    header('Location: vendor/index.php'); 
+                }
+                if($role === 4){
+                    header('Location: expert/index.php'); 
+                }
+                if($role === 5){
+                    header('Location: po/index.php'); 
+                }
 
-                ]);
-        $array = json_decode(json_encode(json_decode($response->getBody()->getContents())), True);                                
-        print_r($array);                        
-        echo($array['access_token']);
 
 
 
+                
+
+                
+	}
 }
 
 

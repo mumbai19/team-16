@@ -1,3 +1,9 @@
+<?php
+// require ('config/db.php');
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +40,7 @@
                     <h2 class="title">Registration Form</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form method="POST" action="../main.php">
                         <div class="form-row">
                             <div class="name">Name</div>
                             <div class="value">
@@ -149,13 +155,14 @@
                             </div>
                         </div> -->
                         <div>
-                            <button class="btn btn--radius-2 btn--red text-center" type="submit" >Register</button>
+                            <button class="btn btn--radius-2 btn--red text-center" name="Register" type="submit" >Register</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>

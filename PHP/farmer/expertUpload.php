@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+include '../../connection.php';
 
 //$id = $_SESSION['id']
 $id = 12;
@@ -13,8 +13,9 @@ $url = $_POST['url'];
 $keyword = $_POST['keywords'];
 $lang = $_POST['lang'];
 
-$query = "insert into expert values(12,1,'$url','$title','$description','$lang','$keyword');";
+$query = "insert into expert values(14,1,'$url','$title','$description','$lang','$keyword');";
 
-$sqlresult = mysqli_query($conn,$query);
+$sqlresult = mysqli_query($conn,$query) or die("no no");
+header('Location: videoList.php');
 
 ?>

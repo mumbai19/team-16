@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2019 at 02:42 PM
+-- Generation Time: Jul 20, 2019 at 05:50 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -21,6 +21,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `fcfg`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assets`
+--
+
+CREATE TABLE `assets` (
+  `aid` int(11) NOT NULL,
+  `id` int(1) DEFAULT NULL,
+  `prod` varchar(500) DEFAULT NULL,
+  `count` int(11) DEFAULT NULL,
+  `price` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -185,6 +199,41 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ponds`
+--
+
+CREATE TABLE `ponds` (
+  `pid` int(11) NOT NULL,
+  `id` int(11) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `dist` varchar(100) DEFAULT NULL,
+  `ponddepth` varchar(100) DEFAULT NULL,
+  `watderduration` varchar(100) DEFAULT NULL,
+  `areaofpond` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pondsfeedback`
+--
+
+CREATE TABLE `pondsfeedback` (
+  `fid` int(11) NOT NULL,
+  `pid` int(11) DEFAULT NULL,
+  `temp` varchar(100) DEFAULT NULL,
+  `time` varchar(100) DEFAULT NULL,
+  `date` varchar(100) DEFAULT NULL,
+  `waterquality` varchar(100) DEFAULT NULL,
+  `ph` varchar(100) DEFAULT NULL,
+  `o2level` varchar(100) DEFAULT NULL,
+  `saltdensity` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `role`
 --
 
@@ -211,31 +260,31 @@ INSERT INTO `role` (`id`, `role`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` int(10) NOT NULL,
+  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `state` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dist` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contact` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dist` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `auth` int(11) NOT NULL,
   `roleid` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `state`, `dist`, `address`, `contact`, `auth`, `roleid`) VALUES
-(1, '', 'r@123.com', '$2y$10$Z80YmP2GLqf8ELOYjpNe1.5dt3qmZFCaulWHTQ0qyUHU/CAkudyXy', NULL, NULL, NULL, '', '', '', '', 0, NULL);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `assets`
+--
+ALTER TABLE `assets`
+  ADD PRIMARY KEY (`aid`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `expert`
@@ -291,6 +340,20 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `ponds`
+--
+ALTER TABLE `ponds`
+  ADD PRIMARY KEY (`pid`),
+  ADD KEY `id` (`id`);
+
+--
+-- Indexes for table `pondsfeedback`
+--
+ALTER TABLE `pondsfeedback`
+  ADD PRIMARY KEY (`fid`),
+  ADD KEY `pid` (`pid`);
+
+--
 -- Indexes for table `role`
 --
 ALTER TABLE `role`
@@ -300,13 +363,23 @@ ALTER TABLE `role`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`),
-  ADD KEY `fk_name` (`roleid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `assets`
+--
+ALTER TABLE `assets`
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `expert`
+--
+ALTER TABLE `expert`
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -327,14 +400,32 @@ ALTER TABLE `oauth_personal_access_clients`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `ponds`
+--
+ALTER TABLE `ponds`
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pondsfeedback`
+--
+ALTER TABLE `pondsfeedback`
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `assets`
+--
+ALTER TABLE `assets`
+  ADD CONSTRAINT `assets_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `expert`
@@ -343,10 +434,16 @@ ALTER TABLE `expert`
   ADD CONSTRAINT `expert_ibfk_1` FOREIGN KEY (`id`) REFERENCES `role` (`id`);
 
 --
--- Constraints for table `users`
+-- Constraints for table `ponds`
 --
-ALTER TABLE `users`
-  ADD CONSTRAINT `fk_name` FOREIGN KEY (`roleid`) REFERENCES `role` (`id`) ON DELETE CASCADE;
+ALTER TABLE `ponds`
+  ADD CONSTRAINT `ponds_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `pondsfeedback`
+--
+ALTER TABLE `pondsfeedback`
+  ADD CONSTRAINT `pondsfeedback_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `ponds` (`pid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

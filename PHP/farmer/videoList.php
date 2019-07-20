@@ -1,3 +1,18 @@
+<?php
+include '../connection.php';
+?>
+
+<?php
+if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
+   echo 'Logged';
+}
+
+$query = "select * from expert where id=1;";
+
+$sqlresult = mysqli_query($conn,$query);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,45 +113,27 @@
     <hr>
     <div class="container">
         <div class="row">
+            <?php 
+            if ( mysqli_num_rows($sqlresult) > 0) {
+            while($row = mysqli_fetch_assoc($sqlresult)) {
+            ?>
             <div class="col-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title"><?php echo $row['title'] ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">video link</a>
+                        <p class="card-text"><?php echo $row['des'] ?></p>
+                        <a href="video.php\?link='<?php echo $row['link']; ?>'" class="card-link">video link</a>
 
                     </div>
 
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">video link</a>
 
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">video link</a>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
+            <?php } } else echo "not found"; ?>
+                   </div>
     </div>
-    </div <div class="row">
+    </div> <div class="row">
     <div class="col-md-12 text-center">
 
         <p>

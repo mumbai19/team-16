@@ -18,7 +18,7 @@
     <div class="container">
         <div class="card mx-5">
             <div class="card-header text-center">Create Video</div>
-            <form action="#" method="post">
+            <form action="expertUpload.php" method="post">
                 <div class="row">
                     <div class="col-8 offset-2">
                         <div class="form-group row">
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="url" class="col-md-4 col-form-label ">Video Youtube</label>
+                            <label for="url" class="col-md-4 col-form-label ">Video URL</label>
                             <input class="form-control" type="text" name="url" id="url" required>
                         </div>
                         <div class="form-group row">
@@ -41,7 +41,7 @@
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">languages</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01" required >
+                                <select class="custom-select" name="lang" id="inputGroupSelect01" required >
                                     <option selected>Choose language</option>
                                     <option value="hindi">Hindi</option>
                                     <option value="english">English</option>

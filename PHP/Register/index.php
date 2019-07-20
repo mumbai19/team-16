@@ -58,7 +58,7 @@
                             <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" type="password" name="password">
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,15 @@
                             <div class="name">Confirm Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
+                                    <input class="input--style-5" type="password" name="cpass">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Phone Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="number" name="phone">
                                 </div>
                             </div>
                         </div>
@@ -82,10 +90,11 @@
                             <div class="name">State</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
+                                    <input class="input--style-5" type="text" name="state">
                                 </div>
                             </div>
                         </div>
+
                         <!-- <div class="form-row m-b-55">
                             <div class="name">Phone</div>
                             <div class="value">

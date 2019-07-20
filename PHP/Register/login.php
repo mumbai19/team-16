@@ -1,14 +1,3 @@
-<?php
-include 'connection.php';
-?>
-
-<?php
-if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
-   echo 'Logged';
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,25 +34,59 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
                     <h2 class="title">Registration Form</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST"  action="main.php"  accept-charset="UTF-8" enctype="multipart/form-data">
-                    
-        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                    <form method="POST">
                             <div class="form-row">
-                            <div class="name">Email</div>
+                            <div class="name">Username</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="password">
+                                    <input class="input--style-5" type="text" name="company">
                                 </div>
                             </div>
+                        </div>
+                            
                         </div>
                         <div class="form-row">
                             <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="password" name="password">
+                                    <input class="input--style-5" type="password" name="company">
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- <div class="form-row m-b-55">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="area_code">
+                                            <label class="label--desc">Area Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="phone">
+                                            <label class="label--desc">Phone Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                        <!-- <div class="form-row p-t-20">
+                            <label class="label label--block">Are you an existing customer?</label>
+                            <div class="p-t-15">
+                                <label class="radio-container m-r-55">Yes
+                                    <input type="radio" checked="checked" name="exist">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">No
+                                    <input type="radio" name="exist">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div> -->
                         <div>
                             <button class="btn btn--radius-2 btn--red text-center" type="submit" >Login</button>
                         </div>
@@ -86,3 +109,4 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
+<!-- end document-->

@@ -40,7 +40,6 @@ $link = $_POST['url'];
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
 	  <div class="bg-top navbar-light">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-center align-items-stretch">
@@ -89,8 +88,8 @@ $link = $_POST['url'];
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item"><a href="index.html" class="nav-link pl-0">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item "><a href="videoList.html" class="nav-link">videos</a></li>
+	        	<li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="videoList.html" class="nav-link">Videos</a></li>
 	        	<li class="nav-item"><a href="teacher.html" class="nav-link">Staff</a></li>
 	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>

@@ -111,7 +111,11 @@ tr:nth-child(even) {
   <tr>
     <td>Alfreds Futterkiste</td>
     <td>Maria Anders</td>
-    <td>Germany</td>
+    <td>
+      
+      <button type ="button" class="btn btn success" id="idAcceptButton">Accept</button>
+      <button type ="button" class="btn-btn danger" id="idDeleteButton">Reject</button>
+    </td>
   </tr>
   <tr>
     <td>Centro comercial Moctezuma</td>

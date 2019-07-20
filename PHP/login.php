@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include '../connection.php';
 ?>
 
 <?php
@@ -46,7 +46,7 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
                 </div>
                 <div class="card-body">
                     <!-- <form method="POST"  action="main.php"  accept-charset="UTF-8" enctype="multipart/form-data"> -->
-                    <form action="main.php" autocomplete="on" method="post">
+                    <form action="../main.php" autocomplete="on" method="post">
                     
         <!-- <input name="_token" type="hidden" value="{{ csrf_token() }}"/> -->
                             <div class="form-row">

@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';
 include 'connection.php';
 // include 'cipher.php';
 // include 'PHPMailer/message.php';
@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
                 session_start();
                 $_SESSION["email"] = $email;
                 if($role == 1){
-                    header('Location: farmer/index.php'); 
+                    header('Location: PHP/farmer/index.php'); 
                 }
                 if($role == 2){
                     header('Location: admin/index.php'); 
@@ -54,5 +54,9 @@ if (isset($_POST['login'])) {
 	}
 }
 
+
+if (isset($_POST['Register'])) {
+    echo 1;
+}
 
 ?>

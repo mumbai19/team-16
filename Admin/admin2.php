@@ -1,17 +1,26 @@
 <?php
 
-  $conn = mysqli_connect('localhost','root','1234','fcfg');
 
-if(mysqli_connect_errno()){
-echo 'connection failed'.mysqli_connect_errno();
-}
-
-
-  $selectSQL = 'SELECT * FROM users where auth=0 and roleid=3 or roleid =4';
+ $dbhost = "localhost";
+ $dbuser = "root";
+ $dbpass = "1234";
+ $db = "scfg";
  
-  if( !( $selectRes = mysql_query( $selectSQL ) ) ){
-    echo 'Retrieval of data from Database Failed - #'.mysql_errno().': '.mysql_error();
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+ echo "done";  
+
+  //require('../PHP/connection.php');
+
+
+  $selectSQL = "SELECT * FROM users where auth=0 and roleid=3 or roleid =4";
+
+ $selectRes = mysqli_query($conn,$selectSQL );
+ 
+  if( !$selectRes ){
+    echo 'Retrieval of data from Database Failed - #'.mysqli_errno().': '.mysqli_error();
+    echo "done";
   }else{
+    echo "else";
     ?>
 <table border="2">
   <thead>
@@ -24,11 +33,11 @@ echo 'connection failed'.mysqli_connect_errno();
   </thead>
   <tbody>
     <?php
-      if( mysql_num_rows( $selectRes )==0 ){
+      if( mysqli_num_rows( $selectRes )==0 ){
         echo '<tr><td colspan="4">No Rows Returned</td></tr>';
       }else{
-        while( $row = mysql_fetch_assoc( $selectRes ) ){
-          echo "<tr><td>{$row['name']}</td><td>{$row['email']}</td><td>{$row['address']}</td><td>{$row['state']}</td><td>{$row['district']}</td></tr>\n";
+        while( $row = mysqli_fetch_assoc( $selectRes ) ){ ?>
+          <tr><td> <?php echo $row['name'] ?> </td><td> <?php echo $row['email'] ?> </td><td><?php echo $row['address'] ?> </td><td> <?php echo $row['state'] ?> </td><td><?php echo $row['dist'] ?></td></tr> <?php
         }
       }
     ?>

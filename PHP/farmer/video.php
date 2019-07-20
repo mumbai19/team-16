@@ -1,3 +1,18 @@
+<?php
+include '../connection.php';
+?>
+
+<?php
+if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
+   echo 'Logged';
+}
+
+$query = "select * from expert where id=1;";
+
+$sqlresult = mysqli_query($conn,$query);
+
+$link = $_GET['link'];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,6 +38,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+
 	  <div class="bg-top navbar-light">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-center align-items-stretch">
@@ -84,9 +100,10 @@
 
         <div class="row">
 
+        
             <div class="col-lg-8">
 
-                <h1 class="mt-4">Video Title</h1>
+                <h1 class="mt-4">title </h1>
 
                 <p class="lead">
                     by
@@ -97,7 +114,7 @@
 
                 <hr>
 
-                <iframe width="100%" height="30%" src="https://www.youtube.com/embed/OwbHtGgCBDw" frameborder="0"
+                <iframe width="100%" height="30%" src="<?php echo $link; ?>" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
                 <hr>
@@ -144,7 +161,6 @@
                 </div>
 
             </div>
-
             <div class="col-md-4">
 
                 <div class="card my-4">

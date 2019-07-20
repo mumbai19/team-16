@@ -34,7 +34,7 @@
                     <h2 class="title">Registration Form</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form method="POST" action="../../main.php" >
                         <div class="form-row m-b-55">
                             <div class="name">Name</div>
                             <div class="value">
@@ -95,25 +95,6 @@
                             </div>
                         </div>
 
-                        <!-- <div class="form-row m-b-55">
-                            <div class="name">Phone</div>
-                            <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-3">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="area_code">
-                                            <label class="label--desc">Area Code</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="phone">
-                                            <label class="label--desc">Phone Number</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="form-row">
                             <div class="name">Role</div>
                             <div class="value">
@@ -145,7 +126,7 @@
                             </div>
                         </div> -->
                         <div>
-                            <button class="btn btn--radius-2 btn--red text-center" type="submit" >Register</button>
+                            <button class="btn btn--radius-2 btn--red text-center" type="submit" name="Register" >Register</button>
                         </div>
                     </form>
                 </div>

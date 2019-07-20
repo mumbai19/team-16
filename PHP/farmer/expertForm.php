@@ -1,24 +1,75 @@
+<!DOCTYPE html>
+
+    
+<?php 
+session_start();
+if(!isset($_SESSION["role"]) || (!isset($_SESSION["id"])))
+
+	{
+		header("location: ../login.php");
+	}
+else{
+    
+}?>
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags -->
+  <head>
+    <title>Fox University - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-    <title>Hello, world!</title>
-</head>
+    <link rel="stylesheet" href="css/aos.css">
 
-<body>
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="ftco-navbar" >
+	    <div class="container d-flex align-items-center px-4">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <form action="#" class="searchform order-lg-last">
+          <div class="form-group d-flex">
+            <input type="text" class="form-control pl-3" placeholder="Search">
+            <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
+          </div>
+        </form>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item"><a href="index.html" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="videoList.html" class="nav-link">Videos</a></li>
+	        	<li class="nav-item"><a href="teacher.html" class="nav-link">Staff</a></li>
+	        	<li class="nav-item"><a href="expertForm.html" class="nav-link">Upload</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
   <hr>
     <div class="container">
         <div class="card mx-5">
             <div class="card-header text-center">Create Video</div>
-            <form action="#" method="post">
+            <form action="expertUpload.php" method="post">
                 <div class="row">
                     <div class="col-8 offset-2">
                         <div class="form-group row">
@@ -28,7 +79,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="url" class="col-md-4 col-form-label ">Video Youtube</label>
+                            <label for="url" class="col-md-4 col-form-label ">Video URL</label>
                             <input class="form-control" type="text" name="url" id="url" required>
                         </div>
                         <div class="form-group row">
@@ -41,7 +92,7 @@
                                 <div class="input-group-prepend">
                                     <label class="input-group-text" for="inputGroupSelect01">languages</label>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect01" required >
+                                <select class="custom-select" name="lang" id="inputGroupSelect01" required >
                                     <option selected>Choose language</option>
                                     <option value="hindi">Hindi</option>
                                     <option value="english">English</option>

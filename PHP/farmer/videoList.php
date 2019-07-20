@@ -14,7 +14,7 @@ $sqlresult = mysqli_query($conn,$query);
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fox University - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Nirjivan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -126,6 +126,10 @@ $sqlresult = mysqli_query($conn,$query);
                         <h5 class="card-title"><?php echo $row['title'] ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                         <p class="card-text"><?php echo $row['des'] ?></p>
+
+                        <a href="video.php?link=<?php echo $row['link'];?>" class="card-link">video link</a>
+
+
                         <!-- <a href="video.php\?link=''" class="card-link">video link</a> -->
                         
                             <?php

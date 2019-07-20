@@ -93,11 +93,14 @@
           </div>
         </form>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link pl-0">Home</a></li>
-				<li class="nav-item "><a href="videolist.html" class="nav-link pl-0">Videos</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+	        <ul class="navbar-nav mr-auto"><li class="nav-item"><a href="index.php" class="nav-link pl-0">Home</a></li>
+        <li class="nav-item "><a href="videoFarmerList.php" class="nav-link pl-0">Videos</a></li>
+        <li class="nav-item active"><a href="UploadFarmerAssets.php" class="nav-link pl-0">Sell</a></li>
+        <li class="nav-item "><a href="checkVendorAssets.php" class="nav-link pl-0">Buy</a></li>
+
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+          </ul>
 	        </ul>
 	      </div>
 	    </div>

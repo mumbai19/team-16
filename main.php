@@ -34,7 +34,9 @@ if (isset($_POST['login'])) {
                 
                 echo $role;
                 session_start();
-                $_SESSION["email"] = $email;
+
+                $_SESSION["id"] = $email;
+                $_SESSION["role"] = $role;
                 if($role == 1){
                     header('Location: PHP/farmer/index.php'); 
                 }

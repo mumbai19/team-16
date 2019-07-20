@@ -45,14 +45,15 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
                     <h2 class="title">Registration Form</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST"  action="main.php"  accept-charset="UTF-8" enctype="multipart/form-data">
+                    <!-- <form method="POST"  action="main.php"  accept-charset="UTF-8" enctype="multipart/form-data"> -->
+                    <form action="main.php" autocomplete="on" method="post">
                     
-        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+        <!-- <input name="_token" type="hidden" value="{{ csrf_token() }}"/> -->
                             <div class="form-row">
                             <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="password">
+                                    <input class="input--style-5" type="email" name="email">
                                 </div>
                             </div>
                         </div>
@@ -65,7 +66,8 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn--radius-2 btn--red text-center" type="submit" >Login</button>
+                        <button class="btn btn--radius-2 btn--red text-center" type="submit" name="login" class="submit">Login</button>
+                            
                         </div>
                     </form>
                 </div>

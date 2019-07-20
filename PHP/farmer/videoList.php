@@ -114,6 +114,11 @@ $sqlresult = mysqli_query($conn,$query);
             while($row = mysqli_fetch_assoc($sqlresult)) {
                 $a = $row['link'];
                 // echo $a;
+
+
+
+
+                
             ?>
             <div class="col-4">
                 <div class="card">

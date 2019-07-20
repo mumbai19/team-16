@@ -35,22 +35,11 @@
                 </div>
                 <div class="card-body">
                     <form method="POST">
-                        <div class="form-row m-b-55">
+                        <div class="form-row">
                             <div class="name">Name</div>
                             <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name">
-                                            <label class="label--desc">first name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="last_name">
-                                            <label class="label--desc">last name</label>
-                                        </div>
-                                    </div>
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="name">
                                 </div>
                             </div>
                         </div>
@@ -63,18 +52,18 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Confirm Password</div>
+                            <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="password" name="cpass">
+                                    <input class="input--style-5" type="email" name="email">
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Phone Number</div>
+                         <div class="form-row">
+                            <div class="name">Address</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="number" name="phone">
+                                    <input class="input--style-5" type="text" name="address">
                                 </div>
                             </div>
                         </div>
@@ -82,7 +71,7 @@
                             <div class="name">District</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
+                                    <input class="input--style-5" type="text" name="district">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +83,22 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="form-row">
+                            <div class="name">Pincode</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="pincode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Contact</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="contact">
+                                </div>
+                            </div>
+                        </div>
                         <!-- <div class="form-row m-b-55">
                             <div class="name">Phone</div>
                             <div class="value">
@@ -115,16 +119,16 @@
                             </div>
                         </div> -->
                         <div class="form-row">
-                            <div class="name">Role</div>
+                            <div class="name">Role Id</div>
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="subject">
                                             <option disabled="disabled" selected="selected">Choose option</option>
-                                            <option>Admin</option>
-                                            <option>Farmer</option>
-                                            <option>Vendor</option>
-                                            <option>Expert</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>

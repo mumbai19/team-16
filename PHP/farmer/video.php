@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+include '../../connection.php';
 ?>
 
 <?php
@@ -7,11 +7,13 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
    echo 'Logged';
 }
 
-$query = "select * from expert where id=1;";
+// $query = "select * from expert where id=1;";
 
-$sqlresult = mysqli_query($conn,$query);
+// $sqlresult = mysqli_query($conn,$query);
 
-$link = $_GET['link'];
+$link = $_POST['url'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +40,6 @@ $link = $_GET['link'];
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
 	  <div class="bg-top navbar-light">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-center align-items-stretch">
@@ -87,8 +88,8 @@ $link = $_GET['link'];
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item"><a href="index.html" class="nav-link pl-0">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item "><a href="videoList.html" class="nav-link">videos</a></li>
+	        	<li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="videoList.html" class="nav-link">Videos</a></li>
 	        	<li class="nav-item"><a href="teacher.html" class="nav-link">Staff</a></li>
 	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -114,15 +115,24 @@ $link = $_GET['link'];
 
                 <hr>
 
+<<<<<<< HEAD
                 <?php $link = str_replace("'", "", $_GET['link']);
                 echo $link;
                 echo "hello";
                 ?>
 
                 <iframe width="100%" height="30%" src="<?php echo $link; ?>" frameborder="0"
+=======
+                <!-- <iframe width="100%" height="30%" src="" frameborder="0"
+>>>>>>> a6194f847d705d323ed4f20a03bb7639fd907a15
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
-                <hr>
+                <hr> -->
+<?php
+$link=str_replace('watch?v=','embed/',$link);
+echo("<iframe width='560' height='315' src=$link frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+?>
+                
 
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut,
                     error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni

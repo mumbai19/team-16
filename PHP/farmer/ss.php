@@ -47,12 +47,46 @@
 
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
-    <style type="text/css">
-      .tabl
-      {
+    <?php 
+$username = "root"; 
+$password = ""; 
+$database = "formm"; 
+$mysqli = new mysqli("localhost", $username, $password, $database); 
+$query = "SELECT * FROM student";
 
-      }
-    </style>
+// for method 1
+
+$result1 = mysqli_query($mysqli, $query);
+$query = "SELECT * FROM student";
+ 
+ /*
+echo '<table class="table" border="1" cellspacing="2" cellpadding="2"> 
+      <tr> 
+          <td> <font face="Arial">Vendor Name</font> </td> 
+          <td> <font face="Arial">Asset Name</font> </td> 
+
+          <td> <font face="Arial">Price per Asset</font> </td> 
+
+      </tr>';
+ 
+if ($result = $mysqli->query($query)) {
+    while ($row = $result->fetch_assoc()) {
+        $field1name = $row["sap"];
+        $field2name = $row["fname"];
+        $field3name = $row["cont"];
+       
+ 
+        echo '<tr> 
+                  <td>'.$field1name.'</td> 
+                  <td>'.$field2name.'</td> 
+                  <td>'.$field3name.'</td> 
+                  
+              </tr>';
+    }
+    $result->free();
+} 
+*/
+?>
   </head>
   <body>
 	  <div class="bg-top navbar-light">
@@ -114,41 +148,16 @@
 	    </div>
 	  </nav>
     <!-- END nav -->
-       <?php 
-$username = "root"; 
-$password = ""; 
-$database = "formm"; 
-$mysqli = new mysqli("localhost", $username, $password, $database); 
-$query = "SELECT * FROM student";
- 
- 
-echo '<table class="table" border="1" cellspacing="2" cellpadding="2"> 
-      <tr> 
-          <td> <font face="Arial">Vendor Name</font> </td> 
-          <td> <font face="Arial">Asset Name</font> </td> 
+   
+       <select>
 
-          <td> <font face="Arial">Price per Asset</font> </td> 
+            <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
-      </tr>';
- 
-if ($result = $mysqli->query($query)) {
-    while ($row = $result->fetch_assoc()) {
-        $field1name = $row["sap"];
-        $field2name = $row["fname"];
-        $field3name = $row["cont"];
-       
- 
-        echo '<tr> 
-                  <td>'.$field1name.'</td> 
-                  <td>'.$field2name.'</td> 
-                  <td>'.$field3name.'</td> 
-                  
-              </tr>';
-    }
-    $result->free();
-} 
-?>
-		
+            <option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
+
+            <?php endwhile;?>
+
+        </select>
 		
    
     

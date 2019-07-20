@@ -21,7 +21,6 @@ if (isset($_POST['login'])) {
         $role =  $row1['roleid'];
     }
     $a = "SELECT * FROM users WHERE email='" . $username . "' and password = '". $password."'";
-    echo $a;
 	$count  = mysqli_num_rows($result);
 	if($count==0) {
         echo 1;

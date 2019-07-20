@@ -39,13 +39,13 @@ if (isset($_POST['login'])) {
                     header('Location: PHP/farmer/index.php'); 
                 }
                 if($role == 2){
-                    header('Location: admin/index.php'); 
+                    header('Location: Admin/index.php'); 
                 }
                 if($role == 3){
-                    header('Location: vendor/index.php'); 
+                    header('Location: Vendor/index.php'); 
                 }
                 if($role == 4){
-                    header('Location: expert/index.php'); 
+                    header('Location: Expert/index.php'); 
                 }
                 if($role == 5){
                     header('Location: po/index.php'); 

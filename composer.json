@@ -1,0 +1,8 @@
+{
+    "require": {
+        "laravel/framework": "5.6.0",
+        "mews/captcha": "^2.2",
+        "guzzlehttp/guzzle": "~6.0",
+        "phpmailer/phpmailer": "^6.0"
+    }
+}

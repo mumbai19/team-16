@@ -27,11 +27,19 @@
 </head>
 
 <body>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Registration Form</h2>
+                    <h2 class="title">Registration Form   <ul class="navbar-nav ml-auto">
+	 <div id="google_translate_element" style="float:right"></div>
+      </h2>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="../../main.php" >
@@ -133,6 +141,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>

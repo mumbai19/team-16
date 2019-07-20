@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+include '../../connection.php';
 
 //$id = $_SESSION['id']
 $id = 12;

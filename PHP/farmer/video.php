@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+include '../../connection.php';
 ?>
 
 <?php
@@ -7,11 +7,13 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
    echo 'Logged';
 }
 
-$query = "select * from expert where id=1;";
+// $query = "select * from expert where id=1;";
 
-$sqlresult = mysqli_query($conn,$query);
+// $sqlresult = mysqli_query($conn,$query);
 
-$link = $_GET['link'];
+$link = $_POST['url'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -114,10 +116,15 @@ $link = $_GET['link'];
 
                 <hr>
 
-                <iframe width="100%" height="30%" src="<?php echo $link; ?>" frameborder="0"
+                <!-- <iframe width="100%" height="30%" src="" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
-                <hr>
+                <hr> -->
+<?php
+$link=str_replace('watch?v=','embed/',$link);
+echo("<iframe width='560' height='315' src=$link frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+?>
+                
 
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut,
                     error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni

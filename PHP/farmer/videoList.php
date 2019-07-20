@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+include '../../connection.php';
 ?>
 
 <?php
@@ -116,6 +116,8 @@ $sqlresult = mysqli_query($conn,$query);
             <?php 
             if ( mysqli_num_rows($sqlresult) > 0) {
             while($row = mysqli_fetch_assoc($sqlresult)) {
+                $a = $row['link'];
+                // echo $a;
             ?>
             <div class="col-4">
                 <div class="card">
@@ -123,8 +125,15 @@ $sqlresult = mysqli_query($conn,$query);
                         <h5 class="card-title"><?php echo $row['title'] ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                         <p class="card-text"><?php echo $row['des'] ?></p>
-                        <a href="video.php\?link='<?php echo $row['link']; ?>'" class="card-link">video link</a>
-
+                        <!-- <a href="video.php\?link=''" class="card-link">video link</a> -->
+                        
+                            <?php
+                            echo("<form method='POST' action='video.php'>");
+                            echo("<input type='hidden' name='url' value= $a>");
+                            echo("<button type='submit' name='button' class='card-link' >Video Link</button>")
+                            ?>
+                            
+                        </form>
                     </div>
 
                 </div>

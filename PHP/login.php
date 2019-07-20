@@ -21,7 +21,7 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>My Website</title>
+    <title>Jaljevika</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">

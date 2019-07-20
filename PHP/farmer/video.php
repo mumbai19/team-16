@@ -115,7 +115,16 @@ $link = $_POST['url'];
 
                 <hr>
 
+<<<<<<< HEAD
+                <?php $link = str_replace("'", "", $_GET['link']);
+                echo $link;
+                echo "hello";
+                ?>
+
+                <iframe width="100%" height="30%" src="<?php echo $link; ?>" frameborder="0"
+=======
                 <!-- <iframe width="100%" height="30%" src="" frameborder="0"
+>>>>>>> a6194f847d705d323ed4f20a03bb7639fd907a15
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
                 <hr> -->

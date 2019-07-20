@@ -30,8 +30,7 @@ if (isset($_POST['login'])) {
         } 
         else 
         {
-            
-                
+                        
                 echo $role;
                 session_start();
 
@@ -57,26 +56,33 @@ if (isset($_POST['login'])) {
 }
 
 
-if(isset($_POST['submit'])){
+if(isset($_POST['Register'])){
     
     
 
     
-    $name=mysqli_real_escape_string($conn,$_POST['name']);
-    $password=mysqli_real_escape_string($conn,$_POST['password']);
-    $state=mysqli_real_escape_string($conn,$_POST['state']);
-    $district=mysqli_real_escape_string($conn,$_POST['district']);
-    $pcode=mysqli_real_escape_string($conn,$_POST['pcode']);
-    $contact=mysqli_real_escape_string($conn,$_POST['contact']);
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $address=$_POST['address'];
+    $roleid=$_POST['subject'];
+    $password=$_POST['password'];
+    $state=$_POST['state'];
+    $district=$_POST['district'];
+    // $pcode=$_POST['pcode'];
+    $contact=$_POST['contact'];
 
 
-                                                 $query ="INSERT INTO posts(id,name,password,state,district,pcode,contact)VALUES('','$name','$email','$password','$state','$district','$pcode','$contact' )";
-$query = "INSERT INTO `users`(`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `state`, `dist`, `address`, `contact`, `auth`, `roleid`) VALUES ('',$name,$email,$password,'','','',$state,$district,$address,$contact,0,$roleid)";
+                                                //  $query ="INSERT INTO posts(id,$name,password,state,district,pcode,contact)VALUES('','$name','$email','$password','$state','$district','$pcode','$contact' )";
+$query = "INSERT INTO `users`(`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `state`, `dist`, `address`, `contact`, `auth`, `roleid`) VALUES (' ','$name','$email','$password','','','','$state','$district','$address','$contact',0,'$roleid')";
 
 if(mysqli_query($conn,$query)){
-    header('Location: '.'index.php'.'');
+     header('Location: PHP/login.php'); 
+    
+    
 }else{
-    echo 'ERROR:'.mysqli_error($conn);
+     header('Location:Register/index.php'); 
+    
+    
 }
 }
 

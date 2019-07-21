@@ -3,7 +3,7 @@ include '../connection.php';
 ?>
 
 <?php
-if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
+if(isset($_SESSION['id']) && !empty($_SESSION['role'])) {
    echo 'Logged';
 }
 

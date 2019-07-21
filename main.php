@@ -11,6 +11,13 @@ include 'connection.php';
 // use GuzzleHttp\Psr7\Request as GuzzleRequest;
 
 
+if (isset($_POST['logout'])) {
+session_destroy();
+header('Location: PHP/login.php'); 
+}
+
+
+
 if (isset($_POST['login'])) {
     $username =  $_POST['email'];    
     $password =  $_POST['password'];    
@@ -19,18 +26,23 @@ if (isset($_POST['login'])) {
     while($row1 = mysqli_fetch_array($result)){
         $email =  $row1['email'];
         $role =  $row1['roleid'];
-    }
-    $a = "SELECT * FROM users WHERE email='" . $username . "' and password = '". $password."'";
+        $place = $row1['dist'];
+        $con = $row1['contact'];
+        $f = "python sms.py $place $con";
+        echo $f;
+ $command = escapeshellcmd("python sms.py $place $con");
+ $output = shell_exec($command);
+$a = "SELECT * FROM users WHERE email='" . $username . "' and password = '". $password."'";
 	$count  = mysqli_num_rows($result);
 	if($count==0) {
         echo 1;
         $message = "Invalid Username or Password!";
-        header('Location: login.php'); 
+        header('Location: PHP/login.php'); 
         } 
         else 
         {
-                        
-                echo $role;
+            
+
                 session_start();
 
                 $_SESSION["id"] = $email;
@@ -52,6 +64,11 @@ if (isset($_POST['login'])) {
                 }
                 
 	}
+
+
+    }
+    
+    
 }
 
 

@@ -187,7 +187,7 @@
         </div>
         <div class="panel-footer">
   
-          <button class="btn btn-lg btn-secondary">Check</button>
+          <a href="../map.php"></a>
         </div>
       </div>      
     </div>    

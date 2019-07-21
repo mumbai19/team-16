@@ -1,3 +1,11 @@
+<?php
+include '../../connection.php';
+
+//if(isset($_SESSION['id']) && !empty($_SESSION['role'])) {
+ //  echo 'Logged';
+
+//   $id = $_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,18 +32,7 @@
 
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
-
-    <?php
-    $server="localhost";
-    $user="root";
-    $pass1="";
-    $dbname="";
-
-
-        $conn=mysqli_connect($server,$user,$pass1,$dbname);
-        //echo "<script type='text/javascript'>alert('Connection Done');</script>";
-    
-
+<?php
     if(isset($_POST['submit']))
     {
         $month=$_POST['month'];
@@ -48,10 +45,27 @@
 
         
             
-                $sql2="INSERT INTO datamin VALUES('$month','$year','$cost','$revenue','$seed','$fish)";
-                $res2=mysqli_query($conn,$sql2);
+                //$sql2="INSERT INTO datamin VALUES('$month','$year','$cost','$revenue','$seed','$fish)";
+               
                 
+                   
+                $sql2="INSERT INTO datamin VALUES(1,'$month','$year','$cost','$revenue','$seed','$fish)";
+                
+                $res2=mysqli_query($conn,$sql2);
+                if($res2)
+                {
+                    if(mysqli_affected_rows($conn)>0)
+                    {
+                        echo "<script type='text/javascript'>alert('Successfully Registered!');</script>";
+                    }
+                }
+            
+
+        
+    
+       
     }
+    
         
  ?>
 </head>

@@ -187,7 +187,9 @@
         </div>
         <div class="panel-footer">
   
-          <button class="btn btn-lg btn-secondary" onclick="../map.php">Check</button>
+          <form action="../main.php" method="post">
+<input type=submit>
+		  </form>
         </div>
       </div>      
     </div>    

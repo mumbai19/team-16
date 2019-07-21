@@ -1,3 +1,11 @@
+<?php
+
+include '../../connection.php';
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -83,33 +91,31 @@
     <div class="container">
         <div class="row">
             <?php 
-            if ( mysqli_num_rows($sqlresult) > 0) {
-            while($row = mysqli_fetch_assoc($sqlresult)) {
-                $a = $row['link'];
+
+            $query = "select * from vendorassets";
+
+            $result = mysqli_query($conn,$query) or die("not done");
+
+            if ( mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                //$a = $row[''];
                 // echo $a;
-
-
-
-
                 
             ?>
             <div class="col-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['title'] ?></h5>
+                        <h5 class="card-title"><?php echo $row['product_name'] ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text"><?php echo $row['des'] ?></p>
-
-                        <a href="video.php?link=<?php echo $row['link'];?>" class="card-link">video link</a>
-
+                        <p class="card-text"><?php echo $row['product_description'] ?></p>
 
                         <!-- <a href="video.php\?link=''" class="card-link">video link</a> -->
                         
-                            <?php
-                            echo("<form method='POST' action='video.php'>");
-                            echo("<input type='hidden' name='url' value= $a>");
-                            echo("<button type='submit' name='button' class='card-link' >Video Link</button>")
-                            ?>
+                            <!--<?php
+                            //echo("<form method='POST' action='video.php'>");
+                            //echo("<input type='hidden' name='url' value= $a>");
+                            //echo("<button type='submit' name='button' class='card-link' >Video Link</button>")
+                            ?> -->
                             
                         </form>
                     </div>

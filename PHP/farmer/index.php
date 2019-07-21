@@ -42,7 +42,7 @@
         <li class="nav-item "><a href="checkVendorAssets.php" class="nav-link pl-0">Buy</a></li>
 
             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-            <li class="nav-item active"><a href="contact.html" class="nav-link">Contact Us</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
           </ul>
         </div>
       </div>

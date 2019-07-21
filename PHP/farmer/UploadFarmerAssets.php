@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+include '../../connection.php';
 
 if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
    echo 'Logged';
@@ -59,12 +59,12 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
-        <form action="#" class="searchform order-lg-last">
+        <form class="searchform order-lg-last" method="post" action="UploadFarmerAssetsPH.php" >
           <div class="form-group d-flex">
             <input type="text" class="form-control pl-3" placeholder="Search">
             <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
           </div>
-        </form>
+        
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav mr-auto"><li class="nav-item"><a href="index.php" class="nav-link pl-0">Home</a></li>
         <li class="nav-item "><a href="videoFarmerList.php" class="nav-link pl-0">Videos</a></li>
@@ -96,11 +96,17 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
                                 </div>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label ">Asset Description</label>
+                            <textarea class="form-control" name="description" id="description" cols="30" rows="5"
+                                required></textarea>
+                        </div>
                         <div class="form-row">
                             <div class="name">Asset count</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="number" name="asset_count">
+                                    <input class="input--style-5" type="number" name="stock">
                                 </div>
                             </div>
                         </div>
@@ -109,6 +115,15 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="number" name="price">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Weight</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="number" name="weight">
                                 </div>
                             </div>
                         </div>

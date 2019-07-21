@@ -19,6 +19,7 @@ if (isset($_POST['login'])) {
     while($row1 = mysqli_fetch_array($result)){
         $email =  $row1['email'];
         $role =  $row1['roleid'];
+        $id = $row1['id'];
     }
     $a = "SELECT * FROM users WHERE email='" . $username . "' and password = '". $password."'";
 	$count  = mysqli_num_rows($result);
@@ -33,8 +34,9 @@ if (isset($_POST['login'])) {
                 echo $role;
                 session_start();
 
-                $_SESSION["id"] = $email;
+                $_SESSION["emailid"] = $email;
                 $_SESSION["role"] = $role;
+                $_SESSION['id']=$id;
                 if($role == 1){
                     header('Location: PHP/farmer/index.php'); 
                 }

@@ -89,6 +89,11 @@ if ($result = $mysqli->query($query)) {
 ?>
   </head>
   <body>
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
 	  <div class="bg-top navbar-light">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-center align-items-stretch">
@@ -143,7 +148,12 @@ if ($result = $mysqli->query($query)) {
 				<li class="nav-item "><a href="videolist.html" class="nav-link pl-0">Videos</a></li>
 	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
-	        </ul>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+      <li class="nav-item mr-2">
+	 <div id="google_translate_element" style="float:right"></div>
+      </li>
+    </ul>
 	      </div>
 	    </div>
 	  </nav>
@@ -165,6 +175,7 @@ if ($result = $mysqli->query($query)) {
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
   <script src="js/jquery.min.js"></script>

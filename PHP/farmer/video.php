@@ -41,6 +41,11 @@ $link = $_POST['url'];
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
 	  <div class="bg-top navbar-light">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-center align-items-stretch">
@@ -94,7 +99,12 @@ $link = $_POST['url'];
 	        	<li class="nav-item"><a href="teacher.html" class="nav-link">Staff</a></li>
 	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+      <li class="nav-item mr-2">
+	 <div id="google_translate_element" style="float:right"></div>
+      </li>
+    </ul>
 	      </div>
 	    </div>
 	  </nav>
@@ -227,7 +237,8 @@ echo("<iframe width='560' height='315' src=$link frameborder='0' allow='accelero
         </div>
 
     </div>
-  
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 
 </html>

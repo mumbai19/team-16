@@ -54,6 +54,11 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
     <link href="css/main.css" rel="stylesheet" media="all">
   </head>
   <body>
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="ftco-navbar" >
       <div class="container d-flex align-items-center px-4">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,6 +79,11 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
           </ul>
+          <ul class="navbar-nav ml-auto">
+      <li class="nav-item mr-2">
+	 <div id="google_translate_element" style="float:right"></div>
+      </li>
+    </ul>
         </div>
       </div>
     </nav>
@@ -167,6 +177,7 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
   <script src="js/jquery.min.js"></script>

@@ -42,6 +42,11 @@ else{
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
 	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="ftco-navbar" >
 	    <div class="container d-flex align-items-center px-4">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,6 +67,11 @@ else{
 	        	<li class="nav-item"><a href="expertForm.html" class="nav-link">Upload</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 	        </ul>
+            <ul class="navbar-nav ml-auto">
+      <li class="nav-item mr-2">
+	 <div id="google_translate_element" style="float:right"></div>
+      </li>
+    </ul>
 	      </div>
 	    </div>
 	  </nav>
@@ -126,6 +136,7 @@ else{
     </div>
 
 
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
     <!-- Optional JavaScript -->

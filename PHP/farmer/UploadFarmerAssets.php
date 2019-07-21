@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+include '../../connection.php';
 
 if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
    echo 'Logged';
@@ -54,22 +54,17 @@ if(isset($_SESSION['accessToken']) && !empty($_SESSION['role'])) {
     <link href="css/main.css" rel="stylesheet" media="all">
   </head>
   <body>
-  <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="ftco-navbar" >
       <div class="container d-flex align-items-center px-4">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
-        <form action="#" class="searchform order-lg-last">
+        <form class="searchform order-lg-last" method="post" action="UploadFarmerAssetsPH.php" >
           <div class="form-group d-flex">
             <input type="text" class="form-control pl-3" placeholder="Search">
             <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
           </div>
-        </form>
+        
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav mr-auto"><li class="nav-item"><a href="index.php" class="nav-link pl-0">Home</a></li>
         <li class="nav-item "><a href="videoFarmerList.php" class="nav-link pl-0">Videos</a></li>
@@ -79,11 +74,6 @@ function googleTranslateElementInit() {
             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
           </ul>
-          <ul class="navbar-nav ml-auto">
-      <li class="nav-item mr-2">
-	 <div id="google_translate_element" style="float:right"></div>
-      </li>
-    </ul>
         </div>
       </div>
     </nav>
@@ -106,11 +96,17 @@ function googleTranslateElementInit() {
                                 </div>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label ">Asset Description</label>
+                            <textarea class="form-control" name="description" id="description" cols="30" rows="5"
+                                required></textarea>
+                        </div>
                         <div class="form-row">
                             <div class="name">Asset count</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="number" name="asset_count">
+                                    <input class="input--style-5" type="number" name="stock">
                                 </div>
                             </div>
                         </div>
@@ -119,6 +115,15 @@ function googleTranslateElementInit() {
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="number" name="price">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Weight</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="number" name="weight">
                                 </div>
                             </div>
                         </div>
@@ -177,7 +182,6 @@ function googleTranslateElementInit() {
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
   <script src="js/jquery.min.js"></script>

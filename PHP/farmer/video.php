@@ -50,7 +50,7 @@ function googleTranslateElementInit() {
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-center align-items-stretch">
     			<div class="col-md-4 d-flex align-items-center py-4">
-    				<a class="navbar-brand" href="index.html">Fox. <span>University</span></a>
+    				<a class="navbar-brand" href="index.php">Fox. <span>University</span></a>
     			</div>
 	    		<div class="col-lg-8 d-block">
 		    		<div class="row d-flex">
@@ -93,12 +93,12 @@ function googleTranslateElementInit() {
         </form>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item"><a href="index.html" class="nav-link pl-0">Home</a></li>
-	        	<li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="videoList.html" class="nav-link">Videos</a></li>
-	        	<li class="nav-item"><a href="teacher.html" class="nav-link">Staff</a></li>
-	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        	<li class="nav-item"><a href="index.php" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item active"><a href="about.php" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="videoList.php" class="nav-link">Videos</a></li>
+	        	<li class="nav-item"><a href="teacher.php" class="nav-link">Staff</a></li>
+	        	<li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
       <li class="nav-item mr-2">
@@ -126,21 +126,15 @@ function googleTranslateElementInit() {
 
                 <hr>
 
-<<<<<<< HEAD
-                <?php $link = str_replace("'", "", $_GET['link']);
-                echo $link;
-                echo "hello";
-                ?>
 
-                <iframe width="100%" height="30%" src="<?php echo $link; ?>" frameborder="0"
-=======
-                <!-- <iframe width="100%" height="30%" src="" frameborder="0"
->>>>>>> a6194f847d705d323ed4f20a03bb7639fd907a15
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                <hr> -->
+                
+
+                
+
 <?php
+
 $link=str_replace('watch?v=','embed/',$link);
+
 echo("<iframe width='560' height='315' src=$link frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
 ?>
                 

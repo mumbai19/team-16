@@ -1,3 +1,23 @@
+<?php
+
+session_start();
+include '../../connection.php';
+
+$command = escapeshellcmd("python getpondrec.py 500 2 10 ");
+ $output = shell_exec($command);
+echo($output);
+
+
+
+
+ 
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,6 +63,9 @@
 
             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item active"><a href="contact.html" class="nav-link">Contact Us</a></li>
+            <form method="POST" action="../../main.php" >
+            <button typ="submit" name="logout">LOGOUT
+</form>
           </ul>
         </div>
       </div>

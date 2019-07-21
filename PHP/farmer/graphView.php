@@ -133,13 +133,19 @@ include("fusioncharts.php");
                     <div class="col-8 offset-2">
                     <div id="chart-container">Chart will render here!</div>
 <br>
+
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQScYwgV0Wplcb67MpM_NJadUHtG7o-KAwEbdqM-RfYbryvcH75snt52TqtS4GuUg3KNhEOvvwgzg-a/pubchart?oid=1734146488&amp;format=interactive"></iframe>
+
+<iframe width="800" height="600" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQScYwgV0Wplcb67MpM_NJadUHtG7o-KAwEbdqM-RfYbryvcH75snt52TqtS4GuUg3KNhEOvvwgzg-a/pubchart?oid=900208045&amp;format=interactive"></iframe>
+
+
                     </div>
                 </div>
 
             </form>
 
         </div>
+
     </div>
     </center>
 </body>

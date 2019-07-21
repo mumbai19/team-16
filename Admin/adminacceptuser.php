@@ -108,7 +108,7 @@
  $dbhost = "localhost";
  $dbuser = "root";
  $dbpass = "";
- $db = "fcfg44";
+ $db = "fcfg";
  
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
  
@@ -116,7 +116,7 @@
   //require('../PHP/connection.php');
 
 
-  $selectSQL = "SELECT * FROM users where auth=0 and roleid=3 or roleid =4";
+  $selectSQL = "SELECT * FROM users where auth=0 and (roleid=3 or roleid =4)";
 
  $selectRes = mysqli_query($conn,$selectSQL );
  
@@ -144,7 +144,25 @@
         echo '<tr><td colspan="4">No Rows Returned</td></tr>';
       }else{
         while( $row = mysqli_fetch_assoc( $selectRes ) ){ ?>
-          <tr><td> <?php echo $row['name'] ?> </td><td> <?php echo $row['address'] ?> </td><td><?php echo $row['state'] ?> </td><td> <?php echo $row['dist'] ?> </td><td><?php echo $row['email'] ?></td><td><button class="btn btn-success">Accept</button></td><td><button class="btn btn-danger">Reject</button></td></tr> <?php
+          <tr><td> <?php echo $row['name'] ?> </td><td> <?php echo $row['address'] ?> </td><td><?php echo $row['state'] ?> </td><td> <?php echo $row['dist'] ?> </td><td><?php echo $row['email'] ?></td><td>
+            
+            <?php $id = $row['id'];
+                            echo("<form method='POST' action='accept.php'>");
+                            echo("<input type='hidden' name='url' value= $id>");
+                            echo("<button type='submit' name='accept' class='btn btn-success' >Accept</button>")
+                            ?>
+            <!-- <button class="btn btn-success" name="accept">Accept</button></form> -->
+
+          </td>
+          <td><?php
+            echo("<form method='POST' action='accept.php'>");
+                            echo("<input type='hidden' name='url' value= $id>");
+                            echo("<button type='submit' name='danger' class='btn btn-danger' >Accept</button>")?>
+              
+
+            </td>
+          </tr> 
+            <?php
         }
       }
     ?>

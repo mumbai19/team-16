@@ -130,7 +130,10 @@
 
 <div class="ff">
    <a href="adminacceptuser.php"><button class="btn btn-primary">Accept user</button></a>
-  <button class="btn btn-primary">Add government policies</button>
+    <form action="policies.html" method="post">
+   
+  <button class="btn btn-primary" >Add government policies</button>
+  </form>
 		</div>
 
 		

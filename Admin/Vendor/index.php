@@ -1,23 +1,3 @@
-<?php
-
-session_start();
-include '../../connection.php';
-
-$command = escapeshellcmd("python getpondrec.py 500 2 10 ");
- $output = shell_exec($command);
-echo($output);
-
-
-
-
- 
-
-?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,46 +21,95 @@ echo($output);
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+    .hi
+    {
+      margin-top: 10px;
+      width: 900px;
+      height: 300px;
+      margin-left:100px;
+    }
+    .ff
+    {
+      margin-left: 450px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+
+    
+    </style>
   </head>
   <body>
-  <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="ftco-navbar" >
-      <div class="container d-flex align-items-center px-4">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-        <form action="#" class="searchform order-lg-last">
+	  <div class="bg-top navbar-light">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-center align-items-stretch">
+    			<div class="col-md-4 d-flex align-items-center py-4">
+    				<a class="navbar-brand" href="index.html">Jaljeevika</a>
+    			</div>
+	    		<div class="col-lg-8 d-block">
+		    		<div class="row d-flex">
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="text">
+					    		<span>Email</span>
+						    	<span>jaljeevika@email.com</span>
+						    </div>
+					    </div>
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <div class="text">
+						    	<span>Call</span>
+						    	<span>Call Us:022-23333345</span>
+						    </div>
+					    </div>
+					    <div class="col-md topper d-flex align-items-center justify-content-end">
+					    	<p class="mb-0">
+					    		<a href="#" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+					    			<span>Register</span>
+					    		</a>
+					    		<a href="#" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+					    			<span>Login</span>
+					    		</a>
+					    	</p>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center px-4">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <form action="#" class="searchform order-lg-last">
           <div class="form-group d-flex">
             <input type="text" class="form-control pl-3" placeholder="Search">
             <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
           </div>
         </form>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav mr-au">
-            <li class="nav-item active"><a href="index.php" class="nav-link pl-0">Home</a></li>
-        <li class="nav-item "><a href="videoFarmerList.php" class="nav-link pl-0">Videos</a></li>
-        <li class="nav-item "><a href="UploadFarmerAssets.php" class="nav-link pl-0">Sell</a></li>
-        <li class="nav-item "><a href="checkVendorAssets.php" class="nav-link pl-0">Buy</a></li>
-
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-            <li class="nav-item active"><a href="contact.html" class="nav-link">Contact Us</a></li>
-            <form method="POST" action="../../main.php" >
-            <button typ="submit" name="logout">LOGOUT
-</form>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-      <li class="nav-item mr-2">
-	 <div id="google_translate_element" style="float:right"></div>
-      </li>
-    </ul>
-        </div>
-      </div>
-    </nav>
-    
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active"><a href="" class="nav-link pl-0">Home</a></li>
+	        	<li class="nav-item"><a href="" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
     <!-- END nav -->
     
     <section class="home-slider owl-carousel">
@@ -112,50 +141,58 @@ function googleTranslateElementInit() {
     <section class="ftco-services ftco-no-pb">
 			<div class="container-wrap">
 				<div class="row no-gutters">
-          <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
-            <div class="media block-6 d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-teacher"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Watch Videos!</h3>
-                <p>Watch videos and tutorial uploaded by our experts</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
-            <div class="media block-6 d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-reading"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Buy products!</h3>
-                <p>Connect to our vendors!.</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
-            <div class="media block-6 d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-books"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Get notified!</h3>
-                <p>Get notification based</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
-            <div class="media block-6 d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-diploma"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Get Reports</h3>
-                <p>Get reports and analysis.</p>
-              </div>
-            </div>      
-          </div>
+         
+         <div id="pricing" class="container-fluid">
+  <div class="text-center">
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12 ff">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h2>Sell items</h2>
+        </div>
+        <div class="panel-body">
+          <p>Sell items to farmers<br> and other vendors</p>
+        </div>
+        <div class="panel-footer">
+      
+          <button class="btn btn-lg btn-secondary">Sell</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12 ff" >
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h2>Buy items</h2>
+        </div>
+        <div class="panel-body">
+          <p>Buy items from farmers<br>and other vendors</p>
+          
+        </div>
+        <div class="panel-footer">
+          
+          <button class="btn btn-lg btn-secondary">Buy</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12 ff">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h2>Check nearby farmers</h2>
+        </div>
+        <div class="panel-body">
+           <p>Search nearby farmers<br>through out Map feature</p>
+          
+          
+        </div>
+        <div class="panel-footer">
+  
+          <button class="btn btn-lg btn-secondary">Check</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
         </div>
 			</div>
 		</section>
@@ -211,7 +248,6 @@ function googleTranslateElementInit() {
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

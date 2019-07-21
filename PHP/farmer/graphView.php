@@ -75,8 +75,7 @@ include("fusioncharts.php");
 </head>
 
 <body>
-    <br>
-    <br>
+    
     <?php
 
     $hostdb = "localhost";  // MySQl host
@@ -85,8 +84,10 @@ include("fusioncharts.php");
     $namedb = "fcfg";  // MySQL database name
     $dbhandle = new mysqli($hostdb, $userdb, $passdb, $namedb);
     $sqlQuery = "SELECT DISTINCT revenue,month FROM farmer; ";
+    $sqlQuery1 = "SELECT DISTINCT revenue,month,amt_seed FROM farmer; ";
 
     $result = $dbhandle->query($sqlQuery);
+    
     if ($result) {
 
         $arrData = array(
@@ -106,9 +107,6 @@ include("fusioncharts.php");
             "value" => $row["revenue"]
         ));
     }
-
-
-
     $jsonData = json_encode($arrData);
     $arrChartConfig = array(
         "chart" => array(
@@ -127,7 +125,27 @@ include("fusioncharts.php");
     ?>
 
     <center>
-        <div id="chart-container">Chart will render here!</div>
+        <br>
+        <div class="container">
+        <div class="card mx-5">
+            <div class="card-header text-center">Create Video</div>
+                <div class="row">
+                    <div class="col-8 offset-2">
+                    <div id="chart-container">Chart will render here!</div>
+<br>
+<iframe width="800" height="600" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQScYwgV0Wplcb67MpM_NJadUHtG7o-KAwEbdqM-RfYbryvcH75snt52TqtS4GuUg3KNhEOvvwgzg-a/pubchart?oid=900208045&amp;format=interactive"></iframe>
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+
+    </div>
     </center>
 </body>
 

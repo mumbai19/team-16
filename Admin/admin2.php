@@ -26,9 +26,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Address</th>
+      <th>Email</th>
+      <th>address</th>
       <th>State</th>
-      <th>Email Id</th>
+      <th>District</th>
     </tr>
   </thead>
   <tbody>

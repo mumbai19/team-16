@@ -1,20 +1,3 @@
-<?php
-
-session_start();
-include '../../connection.php';
-
-$command = escapeshellcmd("python getpondrec.py 500 2 10 ");
- $output = shell_exec($command);
-echo($output);
-
-
-
-
- 
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -204,7 +187,9 @@ echo($output);
         </div>
         <div class="panel-footer">
   
-          <button class="btn btn-lg btn-secondary">Check</button>
+          <form action="../main.php" method="post">
+<input type=submit>
+		  </form>
         </div>
       </div>      
     </div>    

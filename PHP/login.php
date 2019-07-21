@@ -42,7 +42,7 @@ if(isset($_SESSION['id']) && !empty($_SESSION['role'])) {
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Registration Form</h2>
+                    <h2 class="title">Login Form</h2>
                 </div>
                 <div class="card-body">
                     <!-- <form method="POST"  action="main.php"  accept-charset="UTF-8" enctype="multipart/form-data"> -->
